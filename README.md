@@ -1,3 +1,12 @@
+# Author's notes
+
+This was a fun and interesting assignment, and I hope my style somewhat reflects your design choices! I opted to make my solution more simple, although I probably could've made more complex nooks and crannies. I figured you'd appreciate easy readability and structure. 
+
+Nevertheless, I am thankful for the opportunity and can't wait to hear your thoughts!
+
+PS. Make sure to click on the heroes' images. 
+
+
 # Home assignment
 
 For this assignment we have created a GraphQL API and a simple React application that queries infromation from that API. It is your job to finalize this application, either from frontend or backend side. More information of these tracks down below in Tracks section.
