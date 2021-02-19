@@ -1,24 +1,19 @@
 // It is your job to implement this. More info in README
 
-import * as React from 'react'
-//import styled from 'styled-components';
+import * as React from 'react';
 
 import { 
   HeroContainer,
   Container, 
   HeroImage, 
-  PopupImage, 
   Overlay, 
-  Background, 
-  Popup, 
-  Button,
   Description,
   } 
-  from './styling'
+from './styling';
 
-  import HeroSkills from "./HeroSkills"
-  import HeroAttributes from "./HeroAttributes"
-  import { HeadingOne, HeadingTwo, Paragraph } from "../../components/Typography"
+import HeroSkills from './HeroSkills';
+import HeroAttributes from './HeroAttributes';
+import { HeadingTwo, Paragraph } from '../../components/Typography';
 
 interface IHeroCardProps {
   name: string
@@ -45,42 +40,49 @@ interface IHeroCardProps {
   // extend this
 }
 
-//#001147 background
-
 export const HeroCard: React.FC<IHeroCardProps> = ({ name, imgUrl, backStory, description, skills, attributes }) => {
-  const [popup, setPopup] = React.useState(false)
+  
+  const [heroStory, setHeroStory] = React.useState(false);   // If true displays backstory
 
-  if (popup) {    
+  if (heroStory) {    
       return (
-        <Background onClick={() => setPopup(false)}>
-        <Popup>
-          <Button>X</Button>
+        <Container>
+          <HeroContainer>
           
-          <HeadingTwo style={{ textAlign: 'center' }}><span style={{ borderBottomStyle: 'double' }}>The Tale of {name}</span></HeadingTwo>
+          <HeadingTwo style={{ textAlign: 'center' }}>{name}</HeadingTwo>
+        
+          <Overlay>
+            <HeroImage src={imgUrl} alt={name} onClick={() => setHeroStory(false)}></HeroImage>
+          </Overlay>
+          
+          <HeadingTwo style={{ textAlign: 'center' }}>
+            <span style={{ borderBottomStyle: 'double' }}>The Tale of {name}</span>
+          </HeadingTwo>
+          
           <Paragraph>{backStory}</Paragraph>
-          <PopupImage src={imgUrl} alt={name}></PopupImage>
-        </Popup>
-        </Background>
-      )
-  }
+          
+          </HeroContainer>
+        </Container>
+      );
+  };
 
   return (
     <Container>
-      <HeroContainer onClick={() => setPopup(true)}>
+      <HeroContainer>
+        
         <HeadingTwo style={{ textAlign: 'center' }}>{name}</HeadingTwo>
         
         <Overlay>
-          <HeroImage src={imgUrl} alt={name}></HeroImage>
+          <HeroImage src={imgUrl} alt={name} onClick={() => setHeroStory(true)}></HeroImage>
         </Overlay>
        
         <Description>{description}</Description>
-        
-        
         <HeroSkills skills={skills}></HeroSkills>
         
         <HeadingTwo style={{ textAlign: 'center' }}></HeadingTwo>
         <HeroAttributes attributes={attributes}></HeroAttributes>
+      
       </HeroContainer> 
     </Container> 
-  )
-}
+  );
+};

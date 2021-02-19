@@ -1,5 +1,7 @@
-import * as React from "react"
-import { HeroTable, HeroTableHeader, HeroTableData } from "./styling";
+import * as React from 'react';
+import { HeroTable, HeroTableHeader, HeroTableData } from './styling';
+
+// Maps the skills into a table
 
 const HeroSkills = ({ skills }) => {
 
@@ -24,7 +26,7 @@ const HeroSkills = ({ skills }) => {
               )}
           </HeroTable>
         </div>
-    )
-}
+    );
+};
 
-export default HeroSkills
+export default HeroSkills;

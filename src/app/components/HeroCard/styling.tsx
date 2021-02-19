@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const HeroContainer = styled.div`
-  
   max-width: 600px;
   border-style: solid;
   border-color: #001147;
@@ -11,7 +10,6 @@ export const HeroContainer = styled.div`
   &:hover {
     border-width: thick;
   }
-
 `;
 
 export const Container = styled.section`
@@ -21,19 +19,13 @@ export const Container = styled.section`
 export const HeroImage = styled.img`
   width: 100%;
   heigth: auto;
+  display: block;
 
   &:hover {
     opacity: 0.5;
     transition: .5s ease;
+    cursor: pointer;
   }
-`;
-
-export const PopupImage = styled.img`
-  width: 60%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 export const Overlay = styled.div`
@@ -45,27 +37,6 @@ export const HiddenText = styled.span`
   position: relative;  
   margin-top: 50vh;
   margin-left: 40%;
-`;
-
-export const Background = styled.div`
-  position: fixed;
-  background: #00000050;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-`;
-
-export const Popup = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  background: white; 
-  border-radius: 4px;
-  padding: 10px;
-  border: 1px solid #999;
 `;
 
 export const Button = styled.button`
@@ -110,6 +81,14 @@ export const AttributeHeader = styled.h3`
 
 export const AttributeSpan = styled.span`
   background-color: #001147;
+  border-style: solid;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+`;
+
+export const AttributeSpanHP = styled.span`
+  background-color: red;
   border-style: solid;
   border-radius: 10px;
   color: white;
